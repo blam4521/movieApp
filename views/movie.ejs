@@ -1,0 +1,14 @@
+<% include partials/header %>
+
+    <h1><%= movieId.title %></h1>
+    <h2><img src= <%="https://image.tmdb.org/t/p/w500/" + movieId.poster_path %>></h2>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <p class="summery text-center"><%= movieId.overview %></p>
+            </div>
+        </div>
+    </div>
+        
+<% include partials/footer %>

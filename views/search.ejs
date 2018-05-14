@@ -1,0 +1,28 @@
+<% include partials/header %>
+
+<h1>Search Results</h1>
+<!-- <a href= "/">Back</a> -->
+<!--*****************************************************  -->
+    <!-- Gallery section  -->
+    <div class="pad-section_search_movies">
+        <section class="container-fluid gallery-section">
+            <div class="row gallery">
+            <% for (let i = 0; i <movieId.length; i++) { %>
+                <div class="col-lg-3 col-sm-6 col-xs-12 padding-0">
+                    <div class="imagewrap">
+                        <a href= <%="/movie/" + movieId[i].id %>>
+                            <% if(movieId[i].poster_path === null) { %>
+                                <h2><%= movieId[i].title %></h2>
+                            <% } else { %>
+                                <h3><%= movieId[i].title %></h3>
+                                <img src= <%="https://image.tmdb.org/t/p/w500/" + movieId[i].poster_path %>>
+                            <% } %>
+                        </a>
+                    </div>
+                </div>
+            <% }; %>
+            </div>
+        </section>
+    </div>
+
+<% include partials/footer %>

@@ -1,0 +1,49 @@
+<% include partials/header %>
+       
+    
+    <!--*****************************************************  -->
+    <!-- JUMBOTRON section  -->
+    
+    <div class="container">
+        <div class="video-background">
+            <div class="video-foreground">
+                <iframe src="https://www.youtube.com/embed/BszXhUjJz00?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=BszXhUjJz00" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>  
+        
+        <div id="vidtop-content">
+            <div class="vid-info">
+                <h1>Valerian and the City of a Thousand Planets</h1>
+                <p>In the 28th century, Valerian and Laureline are special operatives charged with keeping order throughout the human territories. 
+                    On assignment from the Minister of Defense, the two undertake a mission to Alpha, an ever-expanding metropolis where species 
+                    from across the universe have converged over centuries to share knowledge, intelligence, and cultures. At the center of Alpha is a
+                    </p>
+                <a href="http://bladerunnermovie.com/">Official Website</a>
+            </div>
+        </div>
+    </div>
+              
+    <!--*****************************************************  -->
+    <!-- Gallery section  -->
+    <div class="pad-section_movies">
+        <section class="container-fluid gallery-section">
+            <div class="row gallery">
+            <% for (let i = 0; i <movieId.length; i++) { %>
+                <div class="col-lg-3 col-sm-6 col-xs-12 padding-0">
+                    <div class="imagewrap">
+                        <a href= <%="/movie/" + movieId[i].id %>>
+                            <% if(movieId[i].poster_path === null) { %>
+                                <h2><%= movieId[i].title %></h2>
+                            <% } else { %>
+                                <h3><%= movieId[i].title %></h3>
+                                <img src= <%="https://image.tmdb.org/t/p/w500/" + movieId[i].poster_path %>>
+                            <% } %>
+                        </a>
+                    </div>
+                </div>
+            <% }; %>
+            </div>
+        </section>
+    </div>
+ 
+<% include partials/footer %>
